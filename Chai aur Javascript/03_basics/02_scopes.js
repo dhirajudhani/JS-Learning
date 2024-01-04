@@ -45,7 +45,7 @@ if(true){
 
 
 
-//  ******************* intresting *************
+//  ******************* intresting(Hoisting) *************
 
 addone(5);
 function addone(num1){
@@ -56,3 +56,5 @@ addtwo(5)
 const addtwo = function(num2){
     return num2+2;
 }
+// Note = if any function is called inside a variable then hoisting will not work
+// for above code addone will execute BUT addtwo will give an error as it is in variable

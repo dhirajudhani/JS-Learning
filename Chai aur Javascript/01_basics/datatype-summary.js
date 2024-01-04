@@ -33,7 +33,7 @@ console.log(id === anotherId)
 //  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Memory 2 types -> Stack (Primitive), Heap (Non-Primitive)
 
-// Primitive stores in stack so pass by value 
+// Primitive stores in stack so (pass by value )
 let ytName = "Dhiraj"
 let anotherName = ytName;
 
