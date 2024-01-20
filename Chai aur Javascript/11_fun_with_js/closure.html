@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+  </body>
+  <script>
+    // function outer() {
+    //   let username = "dhiraj";
+    //   function inner() {
+    //     console.log(username);
+    //   }
+    //   inner();
+    // }
+    // outer();
+
+    // CLOSURES
+
+    function makeFun(){
+        const name = "dhiraj"
+        function display(){
+            console.log(name)
+        }
+        return display // here it will not return only reference but pura lexical scope jayega uske sath 
+    }
+    const fun = makeFun()
+    fun()
+  </script>
+  <script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor = "orange"
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor = "green  "
+    // }
+
+    // function clickHandler(color){
+    //     document.body.style.backgroundColor = `${color}`
+    // }
+
+    // document.getElementById('orange').onclick = clickHandler('orange') ---> // this will not work, it will always show orange color without any click (USE CLOUSER WHICH RETURN FUNCTION)
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+
+  </script>
+</html>
